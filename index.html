@@ -4,12 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nativ Thousandyear's 14hour Coding Challenge</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .background-square {
+      position: absolute;
+      width: 20vw;
+      height: 20vw;
+      background-image: url('https://media1.tenor.com/images/316e01519fea9e0610ce72f825894c53/tenor.gif?itemid=9921841');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: moveBackground 10s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(100vw, 100vh); }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <div class="background-square"></div>
+    <div class="background-square"></div>
+    <div class="background-square"></div>
+    <!-- Add more background squares as needed -->
+  </div>
+  </style>
   <script src="C:\Users\espio\OneDrive\Desktop\leftiegoldiefountainuavcodingchallenge\smooth-scroll-master\src\smooth-scroll.js"></script>
   <script src="script.js"></script>
   <script src="C:\Users\espio\OneDrive\Desktop\leftiegoldiefountainuavcodingchallenge\three.js-master\build\three.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
   <header>
     <nav>
       <ul>
