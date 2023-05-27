@@ -16,12 +16,41 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
+
+
+const cubeGeometry = new THREE.BoxGeometry();
+const cubeMaterials = [
+  new THREE.MeshBasicMaterial({ color: 0xff0000 }), // Red
+  new THREE.MeshBasicMaterial({ color: 0x00ff00 }), // Green
+  new THREE.MeshBasicMaterial({ color: 0x0000ff }), // Blue
+  new THREE.MeshBasicMaterial({ color: 0xffff00 }), // Yellow
+  new THREE.MeshBasicMaterial({ color: 0xff00ff }), // Magenta
+  new THREE.MeshBasicMaterial({ color: 0x00ffff })  // Cyan
+];
+const cube = new THREE.Mesh(cubeGeometry, cubeMaterials);
 scene.add(cube);
 
+// Create a solar system with colorful planets
+const sunGeometry = new THREE.SphereGeometry(1, 32, 32);
+const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 }); // Yellow
+const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+
+const earthGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+const earthMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Blue
+const earth = new THREE.Mesh(earthGeometry, earthMaterial);
+earth.position.set(3, 0, 0);
+
+const marsGeometry = new THREE.SphereGeometry(0.4, 32, 32);
+const marsMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Red
+const mars = new THREE.Mesh(marsGeometry, marsMaterial);
+mars.position.set(5, 0, 0);
+
+scene.add(sun, earth, mars);
+
+
 camera.position.z = 5;
+
+
 
 function animate() {
   requestAnimationFrame(animate);
