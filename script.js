@@ -48,6 +48,42 @@ mars.position.set(5, 0, 0);
 scene.add(sun, earth, mars);
 
 
+let timerInterval;
+let time = 0;
+let running = false;
+const maxTime = 24 * 60 * 60; // 24 hours in seconds
+
+function formatTime(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const formattedHours = hours.toString().padStart(2, '0');
+  const formattedMinutes = minutes.toString().padStart(2, '0');
+  const formattedSeconds = (seconds % 60).toString().padStart(2, '0');
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
+function startTimer() {
+  if (!running) {
+    running = true;
+    timerInterval = setInterval(() => {
+      time++;
+      document.getElementById('timer').textContent = formatTime(time);
+      if (time >= maxTime) {
+        stopTimer();
+      }
+    }, 1000);
+  }
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  running = false;
+}
+
+document.getElementById('start').addEventListener('click', startTimer);
+document.getElementById('stop').addEventListener('click', stopTimer);
+
+
 camera.position.z = 5;
 
 
