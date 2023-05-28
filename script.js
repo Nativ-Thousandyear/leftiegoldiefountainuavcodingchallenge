@@ -16,38 +16,7 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-
-
-const cubeGeometry = new THREE.BoxGeometry();
-const cubeMaterials = [
-  new THREE.MeshBasicMaterial({ color: 0xff0000 }), // Red
-  new THREE.MeshBasicMaterial({ color: 0x00ff00 }), // Green
-  new THREE.MeshBasicMaterial({ color: 0x0000ff }), // Blue
-  new THREE.MeshBasicMaterial({ color: 0xffff00 }), // Yellow
-  new THREE.MeshBasicMaterial({ color: 0xff00ff }), // Magenta
-  new THREE.MeshBasicMaterial({ color: 0x00ffff })  // Cyan
-];
-const cube = new THREE.Mesh(cubeGeometry, cubeMaterials);
-scene.add(cube);
-
-// Create a solar system with colorful planets
-const sunGeometry = new THREE.SphereGeometry(1, 32, 32);
-const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 }); // Yellow
-const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-
-const earthGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-const earthMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Blue
-const earth = new THREE.Mesh(earthGeometry, earthMaterial);
-earth.position.set(3, 0, 0);
-
-const marsGeometry = new THREE.SphereGeometry(0.4, 32, 32);
-const marsMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Red
-const mars = new THREE.Mesh(marsGeometry, marsMaterial);
-mars.position.set(5, 0, 0);
-
-scene.add(sun, earth, mars);
-
-
+// Timer
 let timerInterval;
 let time = 0;
 let running = false;
@@ -83,10 +52,37 @@ function stopTimer() {
 document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('stop').addEventListener('click', stopTimer);
 
+// Remaining code for the 3D animation
+const cubeGeometry = new THREE.BoxGeometry();
+const cubeMaterials = [
+  new THREE.MeshBasicMaterial({ color: 0xff0000 }), // Red
+  new THREE.MeshBasicMaterial({ color: 0x00ff00 }), // Green
+  new THREE.MeshBasicMaterial({ color: 0x0000ff }), // Blue
+  new THREE.MeshBasicMaterial({ color: 0xffff00 }), // Yellow
+  new THREE.MeshBasicMaterial({ color: 0xff00ff }), // Magenta
+  new THREE.MeshBasicMaterial({ color: 0x00ffff })  // Cyan
+];
+const cube = new THREE.Mesh(cubeGeometry, cubeMaterials);
+scene.add(cube);
+
+// Create a solar system with colorful planets
+const sunGeometry = new THREE.SphereGeometry(1, 32, 32);
+const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 }); // Yellow
+const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+
+const earthGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+const earthMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Blue
+const earth = new THREE.Mesh(earthGeometry, earthMaterial);
+earth.position.set(3, 0, 0);
+
+const marsGeometry = new THREE.SphereGeometry(0.4, 32, 32);
+const marsMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Red
+const mars = new THREE.Mesh(marsGeometry, marsMaterial);
+mars.position.set(5, 0, 0);
+
+scene.add(sun, earth, mars);
 
 camera.position.z = 5;
-
-
 
 function animate() {
   requestAnimationFrame(animate);
@@ -96,6 +92,7 @@ function animate() {
 
   renderer.render(scene, camera);
 }
+
 animate();
 
 // Contact form submission
@@ -103,21 +100,21 @@ const form = document.getElementById('contact-form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   // Perform form validation here
-  
+
   // Send form data to the server using an AJAX request or other method
   // Example AJAX request using Fetch API
   fetch('url/to/submit/form', {
     method: 'POST',
     body: new FormData(form)
   })
-  .then(response => {
-    // Handle response from the server
-  })
-  .catch(error => {
-    // Handle error
-  });
+    .then(response => {
+      // Handle response from the server
+    })
+    .catch(error => {
+      // Handle error
+    });
 });
 
 // Additional functionality can be added based on your specific requirements
