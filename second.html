@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <title>Second Page with Rocket Animation</title>
+  <style>
+    /* ... (existing styles) ... */
+
+    /* Additional styles for the "Earth to Home Planet in One Hundred Days" section */
+    #earth-section {
+      background-color: #000; /* Black background */
+      color: #fff;
+      padding: 50px 0;
+    }
+
+    #earth-image {
+      width: 100px; /* Adjust the size of the rocket image as needed */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      animation: moveRocket 10s linear infinite, blinkFlame 0.5s alternate infinite;
+    }
+
+    @keyframes moveRocket {
+      0% { transform: translateY(-100px); }
+      50% { transform: translateY(100px); }
+      100% { transform: translateY(-100px); }
+    }
+
+    @keyframes blinkFlame {
+      0%, 100% { filter: brightness(100%); }
+      50% { filter: brightness(150%); } /* Brighter flame */
+    }
+  </style>
+</head>
+<body class="alternate-colors">
+  <header>
+    <!-- ... (header content for the second page) ... -->
+  </header>
+
+  <!-- Earth to Home Planet in One Hundred Days section -->
+  <section id="earth-section">
+    <div class="section-content">
+      <h2>Earth to Home Planet in One Hundred Days</h2>
+      <p>
+        Join us in the 14-hour coding challenge as we explore the wonders of space and technology on the second page!
+      </p>
+      <img id="earth-image" src="https://link-to-your-rocket-gif.gif" alt="Moving Rocket">
+    </div>
+  </section>
+
+  <!-- ... (remaining content for the second page) ... -->
+
+  <footer>
+    <!-- ... (footer content for the second page) ... -->
+  </footer>
+
+  <script src="https://unpkg.com/smooth-scroll/dist/smooth-scroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
