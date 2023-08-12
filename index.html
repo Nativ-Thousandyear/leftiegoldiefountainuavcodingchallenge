@@ -7,204 +7,54 @@
 
   <title>Nativ Thousandyear's 14-hour Coding Challenge</title>
   <style>
-    /* Add your custom styles to enhance the appearance of your portfolio */
+    /* ... (existing styles) ... */
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #333;
-      color: #db5151;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin-right: 10px;
-    }
-
-    nav ul li a {
-      color: #dd840f;
-      text-decoration: none;
-    }
-
-    section {
+    /* Additional styles for the "Earth to Home Planet in One Hundred Days" section */
+    #earth-section {
+      background-color: #000; /* Black background */
+      color: #fff;
       padding: 50px 0;
-      border: 1px solid #ccc;
-      text-align: center;
     }
 
-    .section-content {
-      max-width: 800px;
+    #earth-image {
+      width: 100px; /* Adjust the size of the rocket image as needed */
+      height: auto;
+      display: block;
       margin: 0 auto;
+      animation: moveRocket 10s linear infinite;
     }
 
-    footer {
-      background-color: #333;
-      color: #3ec72c;
-      text-align: center;
-      padding: 10px;
+    @keyframes moveRocket {
+      0% { transform: translateY(-100px); }
+      50% { transform: translateY(100px); }
+      100% { transform: translateY(-100px); }
     }
 
-    .timer-container {
-      text-align: center;
+    /* Additional styles for alternating background colors */
+    body.alternate-colors {
+      animation: alternateColors 3s linear infinite;
     }
 
-    h1#timer {
-      font-size: 48px;
-      color: black;
-    }
-
-    .button-container {
-      margin-top: 20px;
-    }
-
-    button {
-      font-size: 24px;
-      padding: 10px 20px;
-      margin: 0 10px;
-    }
-
-    .background-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .background-square {
-      position: absolute;
-      width: 20vw;
-      height: 20vw;
-      background-image: url('https://media1.tenor.com/images/316e01519fea9e0610ce72f825894c53/tenor.gif?itemid=9921841');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      animation: moveBackground 10s linear infinite;
-      border: 1px solid #ccc;
-    }
-
-    @keyframes moveBackground {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(100vw, 100vh); }
+    @keyframes alternateColors {
+      0%, 100% { background-color: #000; }
+      50% { background-color: #111; }
     }
   </style>
 </head>
-<body>
-  <div class="background-container">
-    <div class="background-square"></div>
-    <div class="background-square"></div>
-    <div class="background-square"></div>
-    <!-- Add more background squares as needed -->
-  </div>
+<body class="alternate-colors">
+  <!-- ... (existing content) ... -->
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="hero">
-    <div class="hero-content">
-      <h1>If you love coding, join us!</h1>
-      <p>Embedded Systems, Android Development, C++, ...practices this week.</p>
-    </div>
-  </section>
-
-  <div class="timer-container">
-    <h1 id="timer">00:00:00</h1>
-    <div class="button-container">
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
-    </div>
-  </div>
-
-  <section id="about">
+  <!-- Earth to Home Planet in One Hundred Days section -->
+  <section id="earth-section">
     <div class="section-content">
-      <h2>About Me</h2>
+      <h2>Earth to Home Planet in One Hundred Days</h2>
       <p>
-        I have worked for Infosys and Verizon Wireless...
+        Join us in the 14-hour coding challenge as we explore the wonders of space and technology!
       </p>
-      <!-- Add more details, your education, experience, etc. -->
+      <img id="earth-image" src="https://i.pinimg.com/originals/67/b2/a9/67b2a9ba5e85822f237caae92111e938.gif" alt="Moving Rocket">
     </div>
   </section>
 
-  <section id="projects">
-    <div class="section-content">
-      <h2>Projects @ Github: https://github.com/Nativ-Thousandyear</h2>
-      <!-- Showcase your 3D projects with images, descriptions, and links -->
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="section-content">
-      <h2>C++, Java, and several other programming languages</h2>
-      <!-- List your skills, technologies, and tools related to 3D software engineering -->
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="section-content">
-      <h2>Contact Me</h2>
-      <p>You can reach out to me through the following channels: 804-482-0452 or espiona.billions48q@gmail.com</p>
-      <!-- Add your contact information such as email, phone number, social media links, etc. -->
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="section-content">
-      <h2>Projects</h2>
-      <div class="project">
-        <img src="https://th.bing.com/th/id/OIP.M49fMf-RmisJ1tjlXtOBNQHaEH?pid=ImgDet&rs=1" alt="Project Image">
-        <h3>Power Optimization</h3>
-        <p></p>
-        <!-- Add more details, links, or any other information about the project -->
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="section-content">
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <ul class="skills-list">
-          <li>Embedded Systems</li>
-          <li>Power Optimization</li>
-          <li>C/C++ Programming</li>
-          <li>Android Development</li>
-          <li>Real-time Operating Systems</li>
-          <li>Microcontrollers</li>
-          <li>Hardware-Software Integration</li>
-        </ul>
-        <a href="https://docs.google.com/document/d/1uJbXx5Se5PKWCuDuDhE0dCrDeX5yocdR/edit?usp=sharing&ouid=109841500472442854256&rtpof=true&sd=true" download class="resume-download">Download Resume</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2023 Nativ Thousandyear</p>
-  </footer>
-
-  <script src="https://unpkg.com/smooth-scroll/dist/smooth-scroll.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
-  <script src="script.js"></script>
+  <!-- ... (remaining content) ... -->
 </body>
 </html>
