@@ -1,5 +1,6 @@
-/* Update styles for a space-themed color scheme */
+/* styles.css */
 
+/* Update styles for a space-themed color scheme */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -50,5 +51,18 @@ section {
   padding: 10px;
 }
 
-/* Rest of the existing styles... */
+/* Blinking effect */
+.blinking {
+  animation: blink 1s linear infinite;
+}
 
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Rest of the existing styles... */
